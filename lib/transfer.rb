@@ -14,7 +14,15 @@ def valid?
 end
 
 def execute_transaction
-
+  if(self.status != "pending")
+  elsif !self.valid?
+    @status = "rejected"
+    "Transaction rejected. Please check your account balance."
+  else
+    receiver.deposit(amount)
+    sender.deposit(-amount)
+    @status = "complete"
+  end
 end
 
 def reverse_transfer
