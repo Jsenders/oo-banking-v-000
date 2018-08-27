@@ -13,18 +13,17 @@ def valid?
   sender.valid? && receiver.valid? && sender.balance >self.amount
 end
 
-def execute_transaction 
-  
+def execute_transaction
+
 end
 
-def reverse_transfer 
+def reverse_transfer
   if @status=="complete"
       @status = "pending"
       @amount = -@amount
       execute_transaction
       @status = "reversed"
     end
-  end
 end
 
 end
