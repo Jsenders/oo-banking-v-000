@@ -14,7 +14,7 @@ def valid?
 end
 
 def execute_transaction
-  if(self.status != "pending")
+  if self.status != "pending"
   elsif !self.valid?
     @status = "rejected"
     "Transaction rejected. Please check your account balance."
