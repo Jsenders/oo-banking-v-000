@@ -27,7 +27,6 @@ end
 
 def reverse_transfer
   if @status=="complete"
-      @status = "pending"
       @amount = -@amount
       execute_transaction
       @status = "reversed"
